@@ -9,17 +9,20 @@
 
 ## Features
 
-- **Three Different View:**
-  - Default View : Review the performance of each metric within the network across different dates, and list the metric values for each individual unit.
-  - Dashboard View : Use pre-designed charts to review network performance and provide a comparison between two date ranges to assess overall performance.
+- **Default**
+  - Review the performance of each metric within the network across different dates, and list the metric values for each individual unit.
+- **Dashboard**
+  - Use pre-designed charts to review network performance and provide a comparison between two date ranges to assess overall performance.
     - Top 10 unit
       - Quickly list the top 10 units with the best performance under the specified metric conditions.
     - Request vs. Impression vs. Revenue
       - Simultaneously list the changes in three metrics across different dates to explore their interrelationships.
     - eCPM vs. RPM
       - Compare the average eCPM and RPM across two date ranges to understand overall performance changes and quickly identify any units with outstanding performance.
-  - List View : Summarize the performance of various metrics across the network and verify the changes in metric values. In addition to the overall network performance, also list the changes in each metric for every individual unit.
-  - Report View : Present the data in a detailed and accurate list format, and provide a download option for users to download the data themselves.
+- **List**
+  - Summarize the performance of various metrics across the network and verify the changes in metric values. In addition to the overall network performance, also list the changes in each metric for every individual unit.
+- **Report**
+  - Present the data in a detailed and accurate list format, and provide a download option for users to download the data themselves.
 
 |  | Default | Dashboard  | List  | Report  |
 |:---------:|:---------:|:---------:|:---------:|:---------:|
