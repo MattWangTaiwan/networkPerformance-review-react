@@ -9,8 +9,7 @@ interface Card {
 function Card({ title, target, diff}: Card) {
 
   const thousandTarget = useMemo(() => {
-    if (target < 1) return target
-    return target.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+    return target.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',').replace(/(\.\d+),(?=\d)/g, '$1');
   }, [target])
 
   return (

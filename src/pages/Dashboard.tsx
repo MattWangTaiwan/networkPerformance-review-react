@@ -137,10 +137,11 @@ function Dashboard() {
         setOptions((options) => {
           const temp = JSON.parse(JSON.stringify(options));
           const dateList = getDateXAxis(analysisList, compareList);
+          const compareDateList = getDateXAxis(compareList);
           temp.xAxis.data = dateList;
           temp.series[0].name = metricsOptionList.find((option) => option.value === metric)?.label;
           temp.series[0].data = dateList.map((date: string) => analysis.find((d) => d.date === date)?.[metric] || null);
-          temp.series[1].data = dateList.map((date: string) => compare.find((d) => d.date === date)?.[metric] || null);
+          temp.series[1].data = compareDateList.map((date: string) => compare.find((d) => d.date === date)?.[metric] || null);
           return temp
         });
       }
@@ -205,7 +206,7 @@ function Dashboard() {
             column={[
               { accessor: 'unitId', header: 'Unit ID' },
               { accessor: 'target', header: metricsOptionList.find((option) => option.value === metric)?.label || '' },
-              { accessor: 'diff', header: 'Diff.' }
+              { accessor: 'diff', header: '%Change' }
             ]}
             data={rank}
             pageSize={10}

@@ -32,7 +32,7 @@ export const lineChartOption = {
 const colors = ['#5470C6', '#91CC75', '#EE6666'];
 export const barLineChartOption = {
   title: {
-    text: 'Impression v.s. Request v.s. Revenue',
+    text: 'Impression vs. Request vs. Revenue',
   },
   color: colors,
   tooltip: {
@@ -102,7 +102,7 @@ export const barLineChartOption = {
 
 export const scatterOption = {
   title: {
-    text: 'eCPM v.s. RPM',
+    text: 'eCPM vs. RPM',
   },
   grid: {
     left: '3%',

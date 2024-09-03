@@ -109,7 +109,7 @@ function MainLayout() {
               dateFormat='YYYY-MM-dd'/> : 
             <div>{analysisDate[0]} {analysisDate.length === 2 ? '~' : ''} {analysisDate[1]}</div>
         }
-        { showCompare && <div>v.s.</div> }
+        { (showCompare && parseCompareDate.length === 2) && <div>vs.</div> }
         {
           showCompare &&
             (timeOption === 'custom' ? 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, forwardRef, useImperativeHandle, useRef } from 'react';
 import {
   createColumnHelper,
   flexRender,
@@ -23,7 +23,7 @@ interface Table {
   onSortingChange: (pagination: Pagination, sorting: Sorting[]) => void;
 }
 
-export default function Table({ column, data, pageSize, pageCount, isLoading, onPaginationChange, onSortingChange }:Table) {
+const Table = forwardRef(({ column, data, pageSize, pageCount, isLoading, onPaginationChange, onSortingChange }:Table, ref) => {
   const [sorting, setSorting] = useState([]);
   const [pagination, setPagination] = useState({
     pageIndex: 0,
@@ -61,6 +61,12 @@ export default function Table({ column, data, pageSize, pageCount, isLoading, on
     enableMultiSort: false,
   });
 
+  useImperativeHandle(ref, () => ({
+    resetPage() {
+      table.resetPageIndex();
+    }
+  }));
+
   return (
     <div className="py-4">
       {isLoading ? (
@@ -73,7 +79,7 @@ export default function Table({ column, data, pageSize, pageCount, isLoading, on
                 {headerGroup.headers.map(header => (
                   <th
                     key={header.id}
-                    className={`px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider ${header.column.getCanSort() ? 'cursor-pointer' : ''}`}
+                    className={`text-left text-xs font-medium text-gray-500 uppercase tracking-wider ${header.column.getCanSort() ? 'cursor-pointer' : ''}`}
                     onClick={header.column.getToggleSortingHandler()}
                   >
                     {flexRender(
@@ -93,7 +99,7 @@ export default function Table({ column, data, pageSize, pageCount, isLoading, on
             {table.getRowModel().rows.map(row => (
               <tr key={row.id}>
                 {row.getVisibleCells().map(cell => (
-                  <td key={cell.id} className="px-6 py-4 whitespace-nowrap">
+                  <td key={cell.id}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
                 ))}
@@ -143,4 +149,6 @@ export default function Table({ column, data, pageSize, pageCount, isLoading, on
       }
     </div>
   );
-};
+});
+
+export default Table;
