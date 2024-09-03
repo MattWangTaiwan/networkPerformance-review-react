@@ -10,25 +10,32 @@
 ## Features
 
 - **Three Different View:**
-  - Default View : Quickly view the performance of each metric by date.
-  - Dashboard View : Interactively compare different metrics to gain insights.
-  - List View : 
-  - Report View : Deeply compare the content of each data entry.
+  - Default View : Review the performance of each metric within the network across different dates, and list the metric values for each individual unit.
+  - Dashboard View : Use pre-designed charts to review network performance and provide a comparison between two date ranges to assess overall performance.
+    - Top 10 unit
+      - Quickly list the top 10 units with the best performance under the specified metric conditions.
+    - Request vs. Impression vs. Revenue
+      - Simultaneously list the changes in three metrics across different dates to explore their interrelationships.
+    - eCPM vs. RPM
+      - Compare the average eCPM and RPM across two date ranges to understand overall performance changes and quickly identify any units with outstanding performance.
+  - List View : Summarize the performance of various metrics across the network and verify the changes in metric values. In addition to the overall network performance, also list the changes in each metric for every individual unit.
+  - Report View : Present the data in a detailed and accurate list format, and provide a download option for users to download the data themselves.
 
 |  | Default | Dashboard  | List  | Report  |
 |:---------:|:---------:|:---------:|:---------:|:---------:|
-| Date Range Selection | ✅ | ✅ | ✅ |  |
-| Currency Change | ✅ | ✅ | ✅ |  |
+| Date Range Selection | ✅ | ✅ | ✅ | ✅ |
+| Date Range Compare |  | ✅ | ✅ |  |
+| Currency Change | ✅ | ✅ | ✅ | ✅ |
 | Matric switch | ✅ | ✅ |  |  |
+| Matric summary |  |  | ✅ |  |
 | Metric vs. datetime | ✅ | ✅ |  |  |
-| eCPM top 10 |  | ✅ |  |  |
-| RPM top 10 |  | ✅ |  |  |
-| RPM top 10 |  | ✅ |  |  |
-| Impression vs. request |  | ✅ |  |  |
-| Table | ✅ | | ✅ |  |
-| Sortable | ✅ | | ✅ |  |
-| Avg. Compare | | | ✅ |  |
-| Download | | | ✅(xlsx) |  |
+| Top 10 unit |  | ✅ |  |  
+| Request vs. Impression vs. Revenue  |  | ✅ |  |  |
+| eCPM vs. RPM |  | ✅ |  |  |
+| Table | ✅ | | ✅ | ✅ |
+| Sortable | ✅ | | ✅ | ✅ |
+| Search Unit |  | | ✅ | ✅ |
+| Download | | |  | ✅(xlsx) |
 
 ## Installation
 
