@@ -110,7 +110,6 @@ export const scatterOption = {
     containLabel: true
   },
   tooltip: {
-    // trigger: 'axis',
     showDelay: 0,
     formatter: function (params) {
       return (

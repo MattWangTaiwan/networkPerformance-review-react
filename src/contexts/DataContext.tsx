@@ -34,7 +34,7 @@ const DataContext = createContext<DataContextProps>({
 });
 
 export function DataProvider({ children }: { children: ReactNode }) {
-  const database = useDatabase();  // 使用自定义 Hook 初始化数据库
+  const database = useDatabase();
   const [analysisDate, setAnalysisDate] = useState<string[]>([]);
   const [compareDate, setCompareDate] = useState<string[]>([]);
   const [currency, setCurrency] = useState<string>('');
